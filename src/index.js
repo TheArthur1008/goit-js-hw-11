@@ -42,7 +42,7 @@ const observer = new IntersectionObserver(async enteries => {
 
 const onSearchImagesSubmit = async event => {
     event.preventDefault();
-    // observer.unobserve(targetEl);
+    observer.unobserve(targetEl);
     
 
   pixabayApi.page = 1;
