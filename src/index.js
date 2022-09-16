@@ -25,7 +25,7 @@ const observer = new IntersectionObserver(async enteries => {
             galleryEl.insertAdjacentHTML('beforeend', createMarkup(data.hits));
             gallery.refresh();
 
-            if (data.hits.length === 0) {
+            if (data.hits.length <= 0) {
                 observer.unobserve(targetEl);
                 Notiflix.Notify.info(
                     "We're sorry, but you've reached the end of search results.")
@@ -41,7 +41,9 @@ const observer = new IntersectionObserver(async enteries => {
 
 
 const onSearchImagesSubmit = async event => {
-  event.preventDefault();
+    event.preventDefault();
+    // observer.unobserve(targetEl);
+    
 
   pixabayApi.page = 1;
   galleryEl.innerHTML = '';
